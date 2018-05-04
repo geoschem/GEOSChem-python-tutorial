@@ -3,6 +3,7 @@ channels:
     - conda-forge
 dependencies:
     - python=3.6    # Python version 3.6
+    - cython        # Python <-> C interfacing
     - cartopy       # Geographic plotting toolkit
     - dask          # Parallel processing library
     - jupyter       # Jupyter federation architecture
