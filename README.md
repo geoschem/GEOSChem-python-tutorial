@@ -101,7 +101,7 @@ For occasional programmers, Python can quickly fulfill your basic data analysis 
 - Statistics and machine learning: [Statsmodels](https://www.statsmodels.org), [Scikit-learn](http://scikit-learn.org)
 - Deep learning: [TensorFLow](https://www.tensorflow.org), [Keras](https://keras.io), [PyTorch](https://pytorch.org)
 
-For Earth science, there are a lot more packages [listed here](http://pyaos.johnny-lin.com/?page_id=20), such as the [xESMF](http://xesmf.readthedocs.io) package I wrote for regridding.
+For Earth science, there are a lot more packages [listed here](http://pyaos.johnny-lin.com/?page_id=20), such as the [xESMF](http://xesmf.readthedocs.io) package I wrote for regridding. Finally, Python/xarray integrates extremely well with cloud computing platforms, through the pioneering [Pangeo project](https://pangeo-data.github.io).
 
 **All these come freely and easily**, as long as you know some basic Python...
 
