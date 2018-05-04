@@ -64,7 +64,7 @@ You should be taken to the web browser, just like when using the Binder cloud. O
 
 The true power of Jupyter notebook is that it can be easily used on the remote servers. All plots can be quickly shown in the browser and don't need to go through the terribly slow X11 Channel. **This drastically improves working efficiency.** When using IDL, I often wait for a long time for the X-Window to pop up.
 
-The installation steps are exactly the same as on your own computer. Even on shared HPC clusters, you can still set up your own Python environment and don't need to ask the system administrator for permissions. This is possible because Conda does not require root access. For servers without Internet access (commonly seen in China), [here's a workaround](http://www.meteoboy.com/conda-without-internet.html) (in Chinese).
+The installation steps are exactly the same as on your own computer. Even on shared HPC clusters, you can still set up your personal Python environment and don't need to ask the system administrator for permissions. This is possible because Conda does not require root access. For servers without Internet access (commonly seen in China), [here's a workaround](http://www.meteoboy.com/conda-without-internet.html) (in Chinese).
 
 There is a minor change in how you connect to the Jupyter interface. Recall that on your local computer, Jupyter can be accessed by the address `localhost:8888`. 8888 is the default [port number](https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers) for local Jupyter. To connect to a remote Jupyter program, use whatever different port number such as 8999. When `ssh` to the remote server, add the below port forwarding option so the signal can be sent to your web browser:
 
@@ -84,7 +84,7 @@ A working example can be found [in the GEOSChem-on-cloud project](http://cloud-g
 
 # Why Python
 
-Python is getting incredibly popular in the Earth science community. For example, see [Why Python and Jupyter Notebooks](https://unidata.github.io/online-python-training/introduction.html) from UCAR/Unidata's [online Python training](http://unidata.github.io/online-python-training/). AMS has been hosting a [Symposium dedicated to Python](https://ams.confex.com/ams/98Annual/webprogram/8PYTHON.html) for many years; no other programming languages have such a privilege!
+Python is getting incredibly popular in the Earth science community. See [Why Python and Jupyter Notebooks](https://unidata.github.io/online-python-training/introduction.html) from UCAR/Unidata's [online Python training](http://unidata.github.io/online-python-training/). AMS has been hosting a [Symposium dedicated to Python](https://ams.confex.com/ams/98Annual/webprogram/8PYTHON.html) for many years; no other programming languages have such a privilege!
 
 Python's major advantages are:
 
@@ -133,7 +133,7 @@ Finally, any R or Julia users should know some basic Python, because Python is t
 
 # How to learn Python
 
-I sometimes hear from friends (especially old-school atmospheric scientists) that "Python is hard" -- it always turns out that they are learning Python in a totally wrong way! Python is a general purpose language used in many domains -- a big use case is web development. If you search for "python tutorial" on the Internet, you are very very likely find tutorials on web development or computer algorithms. Don't waste time on them if you just want to get science done as quickly as possible. Stick to **data science** tutorials -- they teach you how to analyze data, which is exactly what an atmospheric modeler needs. **The proper tutorial should feel very accessible and highly relevant to your daily research work.**
+I sometimes hear from friends (especially old-school atmospheric scientists) that "Python is hard" -- it always turns out that they are learning Python in a totally wrong way! Python is a general purpose language used in many domains -- a big use case is web development. If you search for "python tutorial" on the Internet, you are very very likely find tutorials on web development or computer algorithms. Don't waste time on them if you just want to get science done as quickly as possible. Stick to **data science** tutorials -- they teach you how to analyze data, which is exactly what an atmospheric modeller needs. **The proper tutorial should feel very accessible and highly relevant to your daily research work.**
 
 Besides the tutorials in this repository, I recommend those websites below:
 
@@ -166,6 +166,6 @@ There is a very similar philosophy for learning most programming tools. If you f
 
 So, make sure you are reading something related to **Research computing** (not just "coding" in general!)
 
-A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do) is also a great book (although not free) that can bring a researcher's coding skill to the next level.
+A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do) is also a great book that can bring a researcher's coding skill to the next level.
 
-Final, this situation (hard to find proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](http://cloud-gc.readthedocs.io/) I wrote!), instead of learning it from a web programmer's perspective.
+Finally, this situation (hard to identify proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](http://cloud-gc.readthedocs.io/) I wrote!), instead of learning it from a web programmer's perspective.
