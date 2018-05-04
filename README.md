@@ -111,7 +111,7 @@ The most important reason is that they contrast open science and reproducible re
 
 Even if money is not a not problem, IDL & MATLAB still lead to a much lower research efficiency (worse user interface, slower code, incomplete functionality...), since they lack the modern features of Python as reviewed in the previous Section.
 
-The astronomy community have completely switched from IDL to Python and developed the outstanding [Astropy package](http://www.astropy.org). The full story is available [this paper](https://arxiv.org/abs/1610.03159):
+The astronomy community have completely switched from IDL to Python and developed the outstanding [Astropy package](http://www.astropy.org). The full story is available in [this paper](https://arxiv.org/abs/1610.03159):
 
 > "One major (but not exclusive) driver of the need for change, and probably the most significant, was **widespread dissatisfaction with IDL**. Those who strongly feel that scientific software and analysis should be open are opposed to the high license fees (or really, any cost) required to run the code."
 
