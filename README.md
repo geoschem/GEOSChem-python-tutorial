@@ -5,12 +5,19 @@
 To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.harvard.edu/geos/meetings/2018_GCA/index.html), May 21-23, 2018.
 
 * [Installation](#installation)
+  * [Try it right now on the cloud for free](#try-it-right-now-on-the-cloud-for-free)
+  * [Install on your own computer](#install-on-your-own-computer)
 * [Why Python](#why-python)
+  * [What's wrong with IDL & MATLAB?](What-s-wrong-with-idl-MATLAB)
+  * [How about NCL? R? Julia?](#how-about-NCL-R-Julia)
 * [How to learn Python](#how-to-learn-python)
+  * [Recommended free materials](#recommended-free-materials)
+  * [How to filter irrelevant books](how-to-filter-irrelevant-books)
+  * [From Python to general research computing skills](#from-python-to-general-research-computing-skills)
 
 # Installation
 
-## Try it right now on the cloud (for free)
+## Try it right now on the cloud for free
 
 [Click here](https://mybinder.org/v2/gh/JiaweiZhuang/GEOSChem-python-tutorial/master) to launch a pre-configured notebook environment on the cloud platform provided freely by the [binder project](https://mybinder.org). Use the Chrome browser if you have trouble loading that page.
 
@@ -22,7 +29,7 @@ The [official doc](https://jupyter-notebook.readthedocs.io/en/stable/examples/No
 
 Python is free & open-source so can be easily installed on any machines. To best way to get the **scientific** Python environment is using the [Conda management system](https://conda.io/docs/). Please follow the [official installation guide](https://conda.io/docs/user-guide/install/index.html) for installing on Linux/Mac/Windows. Linux/Mac also comes with a system Python (`/usr/bin/python`). Don't touch that. Windows users might find the [full Anaconda](https://docs.anaconda.com/anaconda/install/windows) (Conda plus tons of packages) with graphical interface easier to use than the command line.
 
-After installation, make the paths
+After installation, check the paths:
 
 ```
 $ which conda python
@@ -54,11 +61,11 @@ You should be taken to the web browser, just like when using the Binder cloud. O
 
 ## Install on remote server & shared cluster
 
-The true power of Jupyter notebook is that it can be easily used on the remote servers. All plots can be quickly shown in the browser and don't need to go through the terribly slow X11 Channel. **This drastically improves working efficiency.** When using IDL, I often wait a long time for the X-Window to pop up.
+The true power of Jupyter notebook is that it can be easily used on the remote servers. All plots can be quickly shown in the browser and don't need to go through the terribly slow X11 Channel. **This drastically improves working efficiency.** When using IDL, I often wait for a long time for the X-Window to pop up.
 
 The installation steps are exactly the same as on your own computer. Even on shared HPC clusters, you can still set up your own Python environment and don't need to ask the system administrator for permissions. This is possible because Conda does not require root access. For servers without Internet access (commonly seen in China), [here's a workaround](http://www.meteoboy.com/conda-without-internet.html) (in Chinese).
 
-There is a minor change in how you connect to the Jupyter interface. Recall that on your local computer, Jupyter can be accessed by the address `localhost:8888`. 8888 is the default [port number](https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers) for local Jupyter. To connect to a remote Jupyter program, use whatever different port number such as 8999. When `ssh` to the remote server, add this port forwarding option so that the signal can be sent to your web browser:
+There is a minor change in how you connect to the Jupyter interface. Recall that on your local computer, Jupyter can be accessed by the address `localhost:8888`. 8888 is the default [port number](https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers) for local Jupyter. To connect to a remote Jupyter program, use whatever different port number such as 8999. When `ssh` to the remote server, add the below port forwarding option so the signal can be sent to your web browser:
 
 ```
 $ ssh ... -L 8999:localhost:8999
@@ -76,22 +83,22 @@ A working example can be found [in the GEOSChem-on-cloud project](http://cloud-g
 
 # Why Python
 
-Python is getting incredibly popular in the Earth science community. For example, see [Why Python][https://unidata.github.io/online-python-training/introduction.html] from UCAR/Unidata's [online Python training](http://unidata.github.io/online-python-training/). AMS has been hosting a [Symposium dedicated to Python](https://ams.confex.com/ams/98Annual/webprogram/8PYTHON.html) for many years; no other programming languages have such a privilege!
+Python is getting incredibly popular in the Earth science community. For example, see [Why Python and Jupyter Notebooks](https://unidata.github.io/online-python-training/introduction.html) from UCAR/Unidata's [online Python training](http://unidata.github.io/online-python-training/). AMS has been hosting a [Symposium dedicated to Python](https://ams.confex.com/ams/98Annual/webprogram/8PYTHON.html) for many years; no other programming languages have such a privilege!
 
 Python's major advantages are:
 
 - Free and open-source, unlike IDL & MATLAB that cost a lot of money.
 - Very easy to learn. Researchers with any programming experience can pick it up in several minutes. This [Python-MATLAB cheatsheet](https://cheatsheets.quantecon.org) can help your migration.
-- Has an incredibly powerful ecosystem. The [Jupyter project](http://jupyter.org) has revolutionized research computing (Checkout [this article on Nature](https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261), and a [more recent paper](http://ebooks.iospress.nl/publication/42900). For Earth science in particular, the [xarray package](https://xarray.pydata.org) is revolutionizing the way to process NetCDF data, as well as [many other data formats](https://xarray.pydata.org/en/stable/io.html) including the legacy BPCH format for GEOS-Chem (through [xbpch](http://xbpch.readthedocs.io)).
+- Has an incredibly powerful ecosystem. The [Jupyter project](http://jupyter.org) has revolutionized research computing (checkout [this article on Nature](https://www.nature.com/news/interactive-notebooks-sharing-the-code-1.16261), and a [more recent paper](http://ebooks.iospress.nl/publication/42900)). For Earth science in particular, the [xarray package](https://xarray.pydata.org) is revolutionizing the way to process NetCDF data, as well as [many other data formats](https://xarray.pydata.org/en/stable/io.html) including the legacy BPCH format for GEOS-Chem (through [xbpch](http://xbpch.readthedocs.io)).
 
 For occasional programmers, Python can quickly fulfill your basic data analysis needs. For more advanced tasks, there will always be a solution in Python (often when there's no solution in other languages!). Here is a tiny subset of powerful Python packages:
 
 - Day-to-day data analysis and computing: [NumPy](http://www.numpy.org), [Matplotlib](https://matplotlib.org), [Pandas](https://pandas.pydata.org), [xarray](https://xarray.pydata.org)
-- Mathematical & Numerical analysis: [SciPy](https://docs.scipy.org/doc/scipy/reference/), [SymPy](www.sympy.org)
+- Mathematical & Numerical analysis: [SciPy](https://docs.scipy.org/doc/scipy/reference/), [SymPy](https://www.sympy.org)
 - Fancy interactive visualization: [Bokeh](https://bokeh.pydata.org), [Plotly](https://plot.ly/python/), [Altair](https://altair-viz.github.io)
 - High-performance parallel computing: [Numba](https://numba.pydata.org), [Cython](http://cython.org), [Dask](https://dask.pydata.org/en/latest/)
 - Statistics and machine learning: [Statsmodels](https://www.statsmodels.org), [Scikit-learn](http://scikit-learn.org)
-- Deep learning: [TensorFLow](https://www.tensorflow.org), [Keras](https://keras.io), [PyTorch](https://pytorch.org).
+- Deep learning: [TensorFLow](https://www.tensorflow.org), [Keras](https://keras.io), [PyTorch](https://pytorch.org)
 
 For Earth science, there are a lot more packages [listed here](http://pyaos.johnny-lin.com/?page_id=20), such as the [xESMF](http://xesmf.readthedocs.io) package I wrote for regridding.
 
@@ -101,11 +108,11 @@ For Earth science, there are a lot more packages [listed here](http://pyaos.john
 
 The most important reason is that they contrast open science and reproducible research, since other people are not able to run your code without the expensive licenses. [Reproducing a research paper is hard enough](http://www.bbc.com/news/science-environment-39054778). Please don't make it even harder.
 
-Even if money is not a not problem, IDL & MATLAB still lead to a much lower research efficiency (worse user interface, slower code, incomplete functionality..), since they lack the modern features of Python as reviewed in the above Section.
+Even if money is not a not problem, IDL & MATLAB still lead to a much lower research efficiency (worse user interface, slower code, incomplete functionality...), since they lack the modern features of Python as reviewed in the previous Section.
 
 The astronomy community have completely switched from IDL to Python and developed the outstanding [Astropy package](http://www.astropy.org). The full story is available [this paper](https://arxiv.org/abs/1610.03159):
 
-"One major (but not exclusive) driver of the need for change, and probably the most significant, was **widespread dissatisfaction with IDL**. Those who strongly feel that scientific software and analysis should be open are opposed to the high license fees (or really, any cost) required to run the code."
+> "One major (but not exclusive) driver of the need for change, and probably the most significant, was **widespread dissatisfaction with IDL**. Those who strongly feel that scientific software and analysis should be open are opposed to the high license fees (or really, any cost) required to run the code."
 
 Thus, the choice of programming language is not just a matter of taste. **It has real effect on the research efficiency and the openness of science**.
 
@@ -158,8 +165,6 @@ There is a very similar philosophy for learning most programming tools. If you f
 
 So, make sure you are reading something related to **Research computing** (not just "coding" in general!)
 
-A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/).
+A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do) is also a great book (although not free) that can bring a researcher's coding skill to the next level.
 
-[Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do) is also a great book (although not free) that can bring a researcher's coding skill to next level .
-
-Final, this situation (hard to find proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](https://github.com/JiaweiZhuang/cloud_GC) I wrote!), instead of learning it from a web programmer's perspective.
+Final, this situation (hard to find proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](http://cloud-gc.readthedocs.io/) I wrote!), instead of learning it from a web programmer's perspective.
