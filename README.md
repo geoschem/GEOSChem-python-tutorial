@@ -7,12 +7,13 @@ To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.har
 * [Installation](#installation)
   * [Try it right now on the cloud for free](#try-it-right-now-on-the-cloud-for-free)
   * [Install on your own computer](#install-on-your-own-computer)
+  * [Install on remote server & shared cluster](#install-on-remote-server--shared-cluster)
 * [Why Python](#why-python)
-  * [What's wrong with IDL & MATLAB?](What-s-wrong-with-idl-MATLAB)
-  * [How about NCL? R? Julia?](#how-about-NCL-R-Julia)
+  * [What's wrong with IDL & MATLAB?](#whats-wrong-with-idl--matlab)
+  * [How about NCL? R? Julia?](#how-about-ncl-r-julia)
 * [How to learn Python](#how-to-learn-python)
   * [Recommended free materials](#recommended-free-materials)
-  * [How to filter irrelevant books](how-to-filter-irrelevant-books)
+  * [How to filter irrelevant books](#how-to-filter-irrelevant-books)
   * [From Python to general research computing skills](#from-python-to-general-research-computing-skills)
 
 # Installation
