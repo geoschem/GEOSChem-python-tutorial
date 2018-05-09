@@ -14,7 +14,7 @@ To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.har
   * [How about NCL? R? Julia?](#how-about-ncl-r-julia)
 * [How to learn Python](#how-to-learn-python)
   * [Recommended free materials](#recommended-free-materials)
-  * [How to filter irrelevant books](#how-to-filter-irrelevant-books)
+  * [Python tutorials that you should skip](#python-tutorials-that-you-should-skip)
   * [From Python to general research computing skills](#from-python-to-general-research-computing-skills)
 
 # Installation
@@ -209,19 +209,19 @@ Name & Link | Level
 [Scipy lecture notes](http://www.scipy-lectures.org) | Beginner + Advanced
 [IPython Cookbook](https://ipython-books.github.io) | Advanced
 
-## How to filter irrelevant books
+## Python tutorials that you should skip
 
 **Avoid** books & tutorials containing
 
 ```python
   from numpy import * # will mess-up the variable environment ("namespace")
   from pylab import * # mixing matplotlib and numpy together
-  print "hello" # python2 syntax. You should use Python3 only!
+  print "hello" # python2 syntax. You should use Python3 syntax: print("hello")
 ```
 
 They are commonly seen in old "Python for scientific computing" books. Don't waste your time on learning old syntaxes.
 
-Also, **skip** books that do not jump into NumPy at the very beginning but instead talk about web frameworks like Flask and Django. They are irrelevant to what you need. **A lot of wonderful Python books actually belong to this category**, such as [Fluent Python](http://shop.oreilly.com/product/0636920032519.do). As an atmospheric scientist (especially an atmospheric chemist), you definitely do not need this level of Python skill.
+Also, **skip** books that do not jump into NumPy at the very beginning but instead talk about Python web frameworks like "Flask" and "Django". They are irrelevant to what you need. **A lot of wonderful Python books actually belong to this category**, such as [Fluent Python](http://shop.oreilly.com/product/0636920032519.do). As an atmospheric scientist (especially an atmospheric chemist), you definitely do not need this level of Python skill.
 
 ## From Python to general research computing skills
 
