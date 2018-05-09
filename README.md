@@ -10,7 +10,7 @@ To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.har
   * [Install on remote server & shared cluster](#install-on-remote-server--shared-cluster)
 * [Why Python](#why-python)
   * [What's wrong with IDL & MATLAB?](#whats-wrong-with-idl--matlab)
-  * ["I already have lots of IDL scripts!"](#i-already-have-lots-of-IDL-scripts)
+  * ["I already have lots of IDL scripts!"](#i-already-have-lots-of-idl-scripts)
   * [How about NCL? R? Julia?](#how-about-ncl-r-julia)
 * [How to learn Python](#how-to-learn-python)
   * [Recommended free materials](#recommended-free-materials)
@@ -127,10 +127,10 @@ A 100-line IDL script can be often replaced by 10 lines of Python code, so the c
 With Python/xarray, here's how you open a NetCDF file, extract a variable "O3", and save it to a new file.
 
 ```python
-import xarray as xr # use "xr" as a shortcut for the xarray module
-ds = xr.open_dataset('data.nc') # "ds" contains all information in that NC file
-dr = ds['O3'] # Extract a variable from the entire file. Code is self-explanatory
-dr.to_netcdf('O3_only.nc') # write this variable to a new file
+import xarray as xr  # use "xr" as a shortcut for the xarray module
+ds = xr.open_dataset('data.nc')  # "ds" contains all information in that NC file
+dr = ds['O3']  # Extract a variable from the entire file. Code is self-explanatory
+dr.to_netcdf('O3_only.nc')  # write this variable to a new file
 ```
 
 This is even simpler & more intuitive than [NCO](http://nco.sourceforge.net), which is designed specifically for this kind of task (while xarray is general-purpose and can do a lot more things).
@@ -138,13 +138,13 @@ This is even simpler & more intuitive than [NCO](http://nco.sourceforge.net), wh
 With IDL, you would have to write (adapted from [IDL docs](http://www.harrisgeospatial.com/docs/NCDF_Overview.html)):
 ```IDL
 ; --- read data ---
-fid_in = NCDF_OPEN('data.nc') ; Open the NetCDF file:
-var_id = NCDF_VARID(fid, 'O3') ; Get the variable ID
-NCDF_VARGET, fid_in, var_id, data  ; Get the variable data
-NCDF_CLOSE, fid_in ; close the NetCDF file
+fid_in = NCDF_OPEN('data.nc')  ; Open the NetCDF file:
+var_id = NCDF_VARID(fid, 'O3')  ; Get the variable ID
+NCDF_VARGET, fid_in, var_id, data   ; Get the variable data
+NCDF_CLOSE, fid_in  ; close the NetCDF file
 
 ; --- write data ---
-fid_out = NCDF_CREATE('O3_only.nc', /CLOBBER) ; create a new file
+fid_out = NCDF_CREATE('O3_only.nc', /CLOBBER)  ; create a new file for O3
 
 ; the first thing is to define coordinate dimension
 ; assume we know that "O3" is a 4D field with shape (72, 46, 47, 1)
@@ -162,20 +162,20 @@ timearr_id = NCDF_VARDEF(fid_out, 'time', [time_id], /LONG)
 ; then, define the data variable for our O3 field, with minimal metadata
 var_id = NCDF_VARDEF(fid_out, 'O3', [lon_id, lat_id, lev_id, time_id], /FLOAT)
 NCDF_ATTPUT, fid_out, T_id, 'long_name', 'Ozone mixing ratio'
-NCDF_ATTPUT, fid_out, T_id, 'units','mol/mol'
+NCDF_ATTPUT, fid_out, T_id, 'units', 'mol/mol'
 
-; Phew... Hope you haven't fallen asleep!
+; Hope you haven't fallen asleep!
 ; Let's switch to "data mode" to write actual numerical values
-; Assume we already have float arrays lon_arr, lat_arr defined somewhere
-NCDF_CONTROL, fid_out, /ENDEF
-NCDF_VARPUT, fid_out, lonarr_id, lon_arr
+; Assume that float arrays "lon_arr", "lat_arr", are already defined somewhere
+NCDF_CONTROL, fid_out, /ENDEF  ; from "define mode" to "data mode"
+NCDF_VARPUT, fid_out, lonarr_id, lon_arr  ; fill-in coordinate values
 NCDF_VARPUT, fid_out, latarr_id, lat_arr
 NCDF_VARPUT, fid_out, levarr_id, lev_arr
 NCDF_VARPUT, fid_out, timearr_id, time_arr
 
-NCDF_VARPUT, fid_out, var_id, data ; the actual data for the O3 variable
+NCDF_VARPUT, fid_out, var_id, data  ; fill in the actual data for O3
 
-NCDF_CLOSE, fid_out ; finally done!
+NCDF_CLOSE, fid_out  ; Phew... finally done!
 ```
 
 The key difference is that IDL requires you to write low level code to construct a NetCDF file from scratch (exactly like a Fortran program does), while Python/xarray allows you to write **human-readable ideas**. The efficiency-gain by switching to Python is enormous. You can spend much less time writing boilerplate code and **have much more time thinking about real science**. Your code is also a lot more understandable to others, facilitating collaboration.
