@@ -10,6 +10,7 @@ To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.har
   * [Install on remote server & shared cluster](#install-on-remote-server--shared-cluster)
 * [Why Python](#why-python)
   * [What's wrong with IDL & MATLAB?](#whats-wrong-with-idl--matlab)
+  * ["I already have lots of IDL scripts!"](#i-already-have-lots-of-IDL-scripts)
   * [How about NCL? R? Julia?](#how-about-ncl-r-julia)
 * [How to learn Python](#how-to-learn-python)
   * [Recommended free materials](#recommended-free-materials)
@@ -107,7 +108,7 @@ For Earth science, there are a lot more packages [listed here](http://pyaos.john
 
 ## What's wrong with IDL & MATLAB?
 
-The most important reason is that they contrast open science and reproducible research, since other people are not able to run your code without the expensive licenses. [Reproducing a research paper is hard enough](http://www.bbc.com/news/science-environment-39054778). Please don't make it even harder.
+The most important reason is that they contradict open science and reproducible research, since other people are not able to run your code without the expensive licenses. [Reproducing a research paper is hard enough](http://www.bbc.com/news/science-environment-39054778). Let us not make it even harder.
 
 Even if money is not a not problem, IDL & MATLAB still lead to a much lower research efficiency (worse user interface, slower code, incomplete functionality...), since they lack the modern features of Python as reviewed in the previous Section.
 
@@ -115,9 +116,71 @@ The astronomy community have completely switched from IDL to Python and develope
 
 > "One major (but not exclusive) driver of the need for change, and probably the most significant, was **widespread dissatisfaction with IDL**. Those who strongly feel that scientific software and analysis should be open are opposed to the high license fees (or really, any cost) required to run the code."
 
-Thus, the choice of programming language is not just a matter of taste. **It has real effect on the research efficiency and the openness of science**.
+Thus, the choice of programming language is not just a matter of taste. **It has real impact on the research efficiency and the openness of science**.
 
 To be clear, I am not blaming IDL or MATLAB -- they were the pioneers in interactive computing and were the only possible tools in the early time. But it is 2018, and there are much better open-source alternatives.
+
+## "I already have lots of IDL scripts!"
+
+A 100-line IDL script can be often replaced by 10 lines of Python code, so the cost of switching to Python is much lower than you might expect. I learned IDL 4 years ago and had tons of IDL scripts too; but once I entered the Python world I decided to never use IDL (and even MATLAB) again.
+
+With Python/xarray, here's how you open a NetCDF file, extract a variable "O3", and save it to a new file.
+
+```python
+import xarray as xr # use "xr" as a shortcut for the xarray module
+ds = xr.open_dataset('data.nc') # "ds" contains all information in that NC file
+dr = ds['O3'] # Extract a variable from the entire file. Code is self-explanatory
+dr.to_netcdf('O3_only.nc') # write this variable to a new file
+```
+
+This is even simpler & more intuitive than [NCO](http://nco.sourceforge.net), which is designed specifically for this kind of task (while xarray is general-purpose and can do a lot more things).
+
+With IDL, you would have to write (adapted from [IDL docs](http://www.harrisgeospatial.com/docs/NCDF_Overview.html)):
+```IDL
+; --- read data ---
+fid_in = NCDF_OPEN('data.nc') ; Open the NetCDF file:
+var_id = NCDF_VARID(fid, 'O3') ; Get the variable ID
+NCDF_VARGET, fid_in, var_id, data  ; Get the variable data
+NCDF_CLOSE, fid_in ; close the NetCDF file
+
+; --- write data ---
+fid_out = NCDF_CREATE('O3_only.nc', /CLOBBER) ; create a new file
+
+; the first thing is to define coordinate dimension
+; assume we know that "O3" is a 4D field with shape (72, 46, 47, 1)
+lon_id= NCDF_DIMDEF(fid_out, 'lon', 72)
+lat_id= NCDF_DIMDEF(fid_out, 'lat', 46)
+lev_id= NCDF_DIMDEF(fid_out, 'lev', 47)
+time_id= NCDF_DIMDEF(fid_out, 'time', 1)
+
+; then we need to define the actual coordinate variables
+lonarr_id = NCDF_VARDEF(fid_out, 'lon', [lon_id], /FLOAT)
+latarr_id = NCDF_VARDEF(fid_out, 'lat', [lat_id], /FLOAT)
+levarr_id = NCDF_VARDEF(fid_out, 'lev', [lev_id], /FLOAT)
+timearr_id = NCDF_VARDEF(fid_out, 'time', [time_id], /LONG)
+
+; then, define the data variable for our O3 field, with minimal metadata
+var_id = NCDF_VARDEF(fid_out, 'O3', [lon_id, lat_id, lev_id, time_id], /FLOAT)
+NCDF_ATTPUT, fid_out, T_id, 'long_name', 'Ozone mixing ratio'
+NCDF_ATTPUT, fid_out, T_id, 'units','mol/mol'
+
+; Phew... Hope you haven't fallen asleep!
+; Let's switch to "data mode" to write actual numerical values
+; Assume we already have float arrays lon_arr, lat_arr defined somewhere
+NCDF_CONTROL, fid_out, /ENDEF
+NCDF_VARPUT, fid_out, lonarr_id, lon_arr
+NCDF_VARPUT, fid_out, latarr_id, lat_arr
+NCDF_VARPUT, fid_out, levarr_id, lev_arr
+NCDF_VARPUT, fid_out, timearr_id, time_arr
+
+NCDF_VARPUT, fid_out, var_id, data ; the actual data for the O3 variable
+
+NCDF_CLOSE, fid_out ; finally done!
+```
+
+The key difference is that IDL requires you to write low level code to construct a NetCDF file from scratch (exactly like a Fortran program does), while Python/xarray allows you to write **human-readable ideas**. The efficiency-gain by switching to Python is enormous. You can spend much less time writing boilerplate code and **have much more time thinking about real science**. Your code is also a lot more understandable to others, facilitating collaboration.
+
+It took me roughly 2 days to finish the data analysis part for [my recent paper](https://github.com/JiaweiZhuang/FV3_util), which involves processing Terabytes of data on the cubed-sphere grid. The same task would have taken me many weeks with IDL, if possible at all!
 
 ## How about NCL? R? Julia?
 
