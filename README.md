@@ -166,7 +166,7 @@ NCDF_ATTPUT, fid_out, T_id, 'units', 'mol/mol'
 
 ; Hope you haven't fallen asleep!
 ; Let's switch to "data mode" to write actual numerical values
-; Assume that float arrays "lon_arr", "lat_arr", are already defined somewhere
+; Assume that arrays "lon_arr", "lat_arr"... are already defined somewhere
 NCDF_CONTROL, fid_out, /ENDEF  ; from "define mode" to "data mode"
 NCDF_VARPUT, fid_out, lonarr_id, lon_arr  ; fill-in coordinate values
 NCDF_VARPUT, fid_out, latarr_id, lat_arr
