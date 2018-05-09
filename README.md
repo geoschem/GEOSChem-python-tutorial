@@ -81,7 +81,7 @@ $ jupyter notebook --NotebookApp.token='' --no-browser --port=8999
 
 The password is not too useful in this case because the signal only goes through your SSH connection, and is not visible to the external world.
 
-A working example can be found [in the GEOSChem-on-cloud project](http://cloud-gc.readthedocs.io/en/stable/chapter02_beginner-tutorial/quick-start.html#step-4-analyze-output-data-with-python-optional), where you manually connect to the Jupyter notebook on Amazon cloud.
+Visit `localhost:8999` in your local web browser, then you should see a notebook interface. A working example can be found [in the GEOSChem-on-cloud project](http://cloud-gc.readthedocs.io/en/stable/chapter02_beginner-tutorial/quick-start.html#step-4-analyze-output-data-with-python-optional), where you manually connect to the Jupyter notebook on Amazon cloud.
 
 # Why Python
 
