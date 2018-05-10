@@ -178,9 +178,9 @@ NCDF_VARPUT, fid_out, var_id, data  ; fill in the actual data for O3
 NCDF_CLOSE, fid_out  ; Phew... finally done!
 ```
 
-The key difference is that IDL requires you to write low level code to construct a NetCDF file from scratch (exactly like a Fortran program does), while Python/xarray allows you to write **human-readable ideas**. The efficiency-gain by switching to Python is enormous. You can spend much less time writing boilerplate code and **have much more time thinking about real science**. Your code is also a lot more understandable to others, facilitating collaboration.
+IDL requires you to write low level code to construct a NetCDF file from scratch (exactly like a Fortran program does), while Python/xarray allows you to write **human-readable ideas**. The efficiency-gain by switching to Python is enormous. You can spend much less time writing boilerplate code and **have much more time thinking about real science**. Your code is also a lot more understandable to others, facilitating collaboration.
 
-It took me roughly 2 days to finish the data analysis part for [my recent paper](https://github.com/JiaweiZhuang/FV3_util), which involves processing Terabytes of data on the cubed-sphere grid. The same task would have taken me many weeks with IDL, if possible at all!
+It took me roughly 2 days to finish the data analysis part for [my recent paper](https://github.com/JiaweiZhuang/FV3_util), which involves processing Terabytes of data on the cubed-sphere grid (a quite computationally difficult problem). The same task would have taken me many weeks with IDL, if possible at all!
 
 ## How about NCL? R? Julia?
 
