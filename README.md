@@ -45,12 +45,14 @@ Clone this repository so you have all the notebooks and data files to work with:
 $ git clone https://github.com/JiaweiZhuang/GEOSChem-python-tutorial.git
 ```
 
-Install required packages to an isolated environment (which allows you to manage different versions of packages without affecting each other):
+Install required packages into an isolated environment (which allows you to manage different versions of packages without affecting each other):
 
 ```
 $ conda env create -vv -n geo -f geoschem-python-tutorial/environment.yml
 $ source activate geo
 ```
+
+**Windows users** should use [environment_windows.yml](./environment_windows.yml) instead.
 
 You can use a different name other than `geo` for the environment. `-vv` prints more message so the installation won't look like getting stuck.
 
