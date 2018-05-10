@@ -222,7 +222,7 @@ Name & Link | Level
 
 They are commonly seen in old "Python for scientific computing" books. Don't waste your time on learning old syntaxes.
 
-Also, **skip** books that do not jump into NumPy at the very beginning but instead talk about Python web frameworks like "Flask" and "Django". They are irrelevant to what you need. **A lot of wonderful Python books actually belong to this category**, such as [Fluent Python](http://shop.oreilly.com/product/0636920032519.do). As an atmospheric scientist (especially an atmospheric chemist), you definitely do not need this level of Python skill.
+Also, **skip** books that do not jump into NumPy at the very beginning but instead talk about Python web frameworks like "Flask" and "Django". They are irrelevant to what you need. **A lot of wonderful Python books actually belong to this category** (such as [Fluent Python](http://shop.oreilly.com/product/0636920032519.do)), **so be careful**. As an atmospheric scientist (especially an atmospheric chemist), you definitely do not need this level of Python skill.
 
 ## From Python to general research computing skills
 
