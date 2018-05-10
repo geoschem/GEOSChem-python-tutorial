@@ -21,7 +21,7 @@ To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.har
 
 ## Try it right now on the cloud for free
 
-[Click here](https://mybinder.org/v2/gh/JiaweiZhuang/GEOSChem-python-tutorial/master) to launch a pre-configured notebook environment on the cloud platform provided freely by the [binder project](https://mybinder.org). Use the Chrome browser if you have trouble loading that page.
+[Click here](https://mybinder.org/v2/gh/JiaweiZhuang/GEOSChem-python-tutorial/master) to launch a pre-configured notebook environment on the cloud platform provided freely by the [binder project](https://mybinder.org). Use the Chrome browser if you have trouble loading that page. Refresh the page if loading fails.
 
 If the page is loaded successfully, you should see a [Jupyter notebook](https://jupyter-notebook.readthedocs.io/en/stable/examples/Notebook/What%20is%20the%20Jupyter%20Notebook.html) interface. Then, click on the first notebook to get started. Jupyter combines Python code, execution results, plots, custom texts, and even Latex formulas in a single page. Besides using the Jupyter program, you can also view the static notebook on GitHub (e.g [the first notebook](./Chapter00_basic_python.ipynb)).
 
@@ -108,7 +108,7 @@ For Earth science, there are a lot more packages [listed here](http://pyaos.john
 
 ## What's wrong with IDL & MATLAB?
 
-The most important reason is that they contradict open science and reproducible research, since other people are not able to run your code without the expensive licenses. [Reproducing a research paper is hard enough](http://www.bbc.com/news/science-environment-39054778). Let us not make it even harder.
+The major problem is that they contradict open science and reproducible research, since other people are not able to run your code without the expensive licenses. [Reproducing a research paper is hard enough](http://www.bbc.com/news/science-environment-39054778). Let us not make it even harder.
 
 Even if money is not a not problem, IDL & MATLAB still lead to a much lower research efficiency (worse user interface, slower code, incomplete functionality...), since they lack the modern features of Python as reviewed in the previous Section.
 
@@ -188,7 +188,7 @@ They are all great open-source languages. But I recommend Python as the major to
 
 I love [NCL](https://www.ncl.ucar.edu) but it lacks many modern features, notably Jupyter integration. There are [interests in integrating NCL and Jupyter](https://www2.cisl.ucar.edu/siparcs-2018-projects#Accelerating), but this will take some effort. My favorite thing in NCL is [its colormaps](https://www.ncl.ucar.edu/Document/Graphics/color_table_gallery.shtml). Fortunately, you have [full access to NCL colormaps in Python](https://github.com/hhuangwx/cmaps).
 
-[R](https://www.r-project.org) is great for statistics, but dealing with Earth science data is much more than stats. The ecosystem in Python is much more complete.
+[R](https://www.r-project.org) is great for statistics, but dealing with Earth science data is much more than stats. The ecosystem in Python is much more complete. Also, R is a lot more difficult to learn than Python (especially for MATLAB users).
 
 [Julia](https://julialang.org) is perhaps the best language for writing atmospheric models (if there is a chance to rewrite existing models, which is not likely to happen within 10 years). But its data analysis ecosystem is still not comparable with Python.
 
@@ -204,10 +204,11 @@ Besides the tutorials in this repository, I recommend those websites below:
 
 Name & Link | Level
 --- | ---
-[Research Computing in Earth Sciences](https://rabernat.github.io/research_computing/pages/schedule.html) | Beginner
-[Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) | Beginner
-[Scipy lecture notes](http://www.scipy-lectures.org) | Beginner + Advanced
+[Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) | Beginner (highly recommended!)
+[software Carpentry Python Tutorial](http://swcarpentry.github.io/python-novice-gapminder/) | Beginner
+[Scipy Lecture Notes](http://www.scipy-lectures.org) | Beginner + Advanced
 [IPython Cookbook](https://ipython-books.github.io) | Advanced
+[Research Computing in Earth Sciences](https://rabernat.github.io/research_computing/pages/schedule.html) | Beginner + Advanced
 
 ## Python tutorials that you should skip
 
@@ -229,6 +230,6 @@ There is a very similar philosophy for learning most programming tools. If you f
 
 So, make sure you are reading something related to **Research computing** (not just "coding" in general!)
 
-A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do) is also a great book that can bring a researcher's coding skill to the next level.
+A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), [Makefile](http://swcarpentry.github.io/make-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). I also recommend the book (not free though) [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do), which can bring a researcher's software skill to the next level.
 
 Finally, this situation (hard to identify proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](http://cloud-gc.readthedocs.io/) I wrote!), instead of learning it from a web programmer's perspective.
