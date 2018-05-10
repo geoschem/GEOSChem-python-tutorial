@@ -205,7 +205,7 @@ Besides the tutorials in this repository, I recommend those websites below:
 Name & Link | Level
 --- | ---
 [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/) | Beginner (highly recommended!)
-[software Carpentry Python Tutorial](http://swcarpentry.github.io/python-novice-gapminder/) | Beginner
+[Software Carpentry Python Tutorial](http://swcarpentry.github.io/python-novice-gapminder/) | Beginner
 [Scipy Lecture Notes](http://www.scipy-lectures.org) | Beginner + Advanced
 [IPython Cookbook](https://ipython-books.github.io) | Advanced
 [Research Computing in Earth Sciences](https://rabernat.github.io/research_computing/pages/schedule.html) | Beginner + Advanced
