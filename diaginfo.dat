@@ -1,0 +1,167 @@
+#==============================================================================
+# diaginfo.dat: Created by GEOS-CHEM at 2018/05/09 18:08
+#
+# ****** CUSTOMIZED FOR NOx-Ox-Hydrocarbon-Aerosol SIMULATION *****
+#
+# This file contains category names and the offsets which they are stored
+# in file "tracerinfo.dat".  This file is read into GAMAP by routine
+# "ctm_diaginfo.pro".
+#
+# File Format:
+# -----------------------------------------------------------------------------
+# OFFSET    (I8 )  Constant to add to tracer numbers in order to distinguish
+#                  for the given diagnostic category, as stored in file
+#                  "tracerinfo.dat".  OFFSET may be up to 8 digits long.
+#  --       (1X )  1-character spacer
+# CATEGORY  (A40)  Category name for CTM diagnostics. NOTE: The category name
+#                  can be up to 40 chars long, but historically the GEOS-CHEM
+#                  and GISS models have used an 8-character category name.
+# COMMENT   (A  )  Descriptive comment string
+#
+#  --       (1X )  1-character spacer
+#
+##### SPACING BETWEEN DIAGNOSTIC CATEGORY OFFSETS =     1000
+#==============================================================================
+       0 IJ-AVG-$                                 Tracer concentration                    
+       0 IJ-24H-$                                 24-hr avg tracer conc.                  
+       0 INST-MAP                                 Instantaneous tracer                    
+       0 IJ-MAX-$                                 Surface peak concentration              
+    1000 ANTHSRCE                                 Anthropogenic emissions                 
+    1000 BIOFSRCE                                 Biofuel emissions                       
+    1000 NO-AC-$                                  Aircraft NO                             
+    1000 NO-AN-$                                  Anthropogenic NO                        
+    1000 NO-BIOB                                  Biomass NO                              
+    1000 NO-BIOF                                  Biofuel NO                              
+    1000 NO-LI-$                                  Lightning NO                            
+    1000 NO-SOIL                                  Soil NO                                 
+    1000 NO-FERT                                  Fertilizer NO                           
+    1000 NO-STRT                                  Stratopsheric NO                        
+    2000 INST_COL                                 Instantaneous columns                   
+    3000 CV-FLX-$                                 Convective mass flux                    
+    3000 TURBMC-$                                 PBL mixing mass flux                    
+    3000 EW-FLX-$                                 E/W transport flux                      
+    3000 NS-FLX-$                                 N/S transport flux                      
+    3000 UP-FLX-$                                 Up/down transport flux                  
+    3000 STRT-FLX                                 Flux from stratosphere                  
+    3000 RN--SRCE                                 Rn-Pb-Be source                         
+    3000 RN-DECAY                                 Rn-Pb-Be loss                           
+    3000 WETDCV-$                                 Conv wet scavenging                     
+    3000 WETDLS-$                                 Wet deposition                          
+    3000 MC-FRC-$                                 Moist conv fraction                     
+    4000 DMS-BIOG                                 Biogenic DMS                            
+    4000 DUSTSRCE                                 Dust emission                           
+    4000 NVOCSRCE                                 NVOC emissions                          
+    4000 SALTSRCE                                 Seasalt emission                        
+    4000 SO2-AC-$                                 Aircraft SO2 emissions                  
+    4000 SO2-AN-$                                 Anthro SO2 emissions                    
+    4000 SO2-BIOB                                 Biomass SO2 emissions                   
+    4000 SO2-BIOF                                 Biofuel SO2 emissions                   
+    4000 SO2-EV-$                                 Erup. Volcano SO2                       
+    4000 SO2-NV-$                                 Non-Erup. Volcano SO2                   
+    4000 SO2-SHIP                                 SO2 from ship exhaust                   
+    4000 SO4-AN-$                                 Anthro SO4 emissions                    
+    4000 SO4-BIOF                                 Biofuel SO4 emissions                   
+    4000 NH3-ANTH                                 Anthro NH3 emissions                    
+    4000 NH3-NATU                                 Natural NH3 emissions                   
+    4000 NH3-BIOB                                 Biomass NH3 emissions                   
+    4000 NH3-BIOF                                 Biofuel NH3 emissions                   
+    4000 TROPO-AV                                 Trop avg'd tracer                       
+    4000 TCMASS-$                                 Tracer mass (kg)                        
+   10000 PEDGE-$                                  Pressure at level edges                 
+   10000 PS-PTOP                                  Pressure level edges                    
+   11000 DAO-FLDS                                 GMAO 2-D met fields                     
+   12000 DAO-3D-$                                 GMAO 3-D met fields                     
+   13000 JV-MAP-$                                 Photolysis rates                        
+   14000 OD-MAP-$                                 Optical Depths                          
+   15000 LANDMAP                                  Land type map                           
+   16000 CHEM-L=$                                 Chemical Prod/Loss                      
+   17000 PORL-L=$                                 ND65 P/L family diagnostics             
+   18000 PL-SUL=$                                 P/L of sulfur species                   
+   19000 TIME-SER                                 Timeseries quantities                   
+   20000 CO--SRCE                                 CO Source diagnostic                    
+   21000 BIOGSRCE                                 Biogenic emissions                      
+   22000 ACETSRCE                                 Acetone emissions                       
+   23000 EMDIS-BL                                 Emissions in PBL                        
+   24000 BXHGHT-$                                 Boxheight, airmass, etc                 
+   25000 DXYP                                     Surface area                            
+   26000 TR-PAUSE                                 Annual mean tropopause                  
+   27000 PBLDEPTH                                 Afternoon PBL height                    
+   28000 WD-FRC-$                                 Wet dep fraction                        
+   29000 WD-LSR-$                                 Large-scale rainout                     
+   29000 WD-CVR-$                                 Convective rainout                      
+   29000 WD-LSW-$                                 Large-scale washout                     
+   29000 WD-CVW-$                                 Convective washout                      
+   31000 COBUDGET                                 bnd CO-OH budget                        
+   32000 CH4-LOSS                                 CH4 Loss by OH                          
+   33000 BC-ANTH                                  Anthro BC emission                      
+   33000 BC-BIOB                                  Biomass BC emission                     
+   33000 BC-BIOF                                  Biofuel BC emission                     
+   33000 OC-ANTH                                  Anthro OC emission                      
+   33000 OC-BIOB                                  Biomass OC emission                     
+   33000 OC-BIOF                                  Biofuel OC emission                     
+   33000 OC-BIOG                                  Biogenic OC emission                    
+   33000 OC-MTPA                                  Biogenic MTPA emission                  
+   33000 OC-LIMO                                  Biogenic ALPH emission                  
+   33000 OC-MTPO                                  Biogenic MTPO emission                  
+   33000 OC-SESQ                                  Biogenic SESQ emission                  
+   33000 PL-BC=$                                  H-philic from H-phobic BC               
+   33000 PL-OC=$                                  Philic OC prod/SOA prod                 
+   33000 SALT-SR$                                 Sea salt emission                       
+   33000 BLKC-SR$                                 Black carbon emission                   
+   33000 ORGC-SR$                                 Organic Carbon emission                 
+   34000 HG-SRCE                                  Hg emissions                            
+   61000 HG0-ANTH                                 Hg(0) Anthro Emissions                  
+   62000 HG0-AQUA                                 Hg(0) Ocean Mass                        
+   63000 HG0-RECY                                 Hg(0) Land Prompt Recycling             
+   64000 HGNET-OC                                 Hg(0) Net Ocean Emissions               
+   65000 HG0-GEOG                                 Hg(0) Geogenic Emissions                
+   66000 HG2-ANTH                                 Hg(II) Anthro Emissions                 
+   67000 HG2-AQUA                                 Hg(II) Ocean Mass                       
+   68000 HG2-SINK                                 Hg(II) Sinking                          
+   69000 HGP-ANTH                                 Hg(P) Anthro Emissions                  
+   70000 HGT-AQUA                                 Hg Total Ocean Mass                     
+   71000 HGP-AQUA                                 Hg(P) Ocean Mass                        
+   72000 HGP-CONV                                 Hg(II) Aqeous Conversion to Particle    
+   73000 HG0-BURN                                 Hg(0) Biomass Burning Emissions         
+   74000 HG0-VEGT                                 Hg(0) Veg Transp. Emissions             
+   75000 HG0-SOIL                                 Hg(0) Soil Emissions                    
+   76000 HG0-FXUP                                 Hg(0) Gross Ocean Up Flux               
+   77000 HG0-FXDN                                 Hg(0) Gross Ocean Down Flux             
+   78000 HG0-SNOW                                 Hg(0) Snow Emissions                    
+   79000 HG-NETOX                                 Hg(0) to Hg(II) Net Oxidation           
+   80000 HG2-OXOH                                 Hg(0) Oxidation to Hg(II) by OH         
+   81000 HG2-OXO3                                 Hg(0) Oxidation to Hg(II) by O3         
+   82000 HG2-SALT                                 Hg(II) Loss by Sea Salt                 
+   83000 HG2-SSRX                                 Hg(0) Sea Salt Reaction Rate            
+   84000 HG2-OXBR                                 Hg(0) Oxidation to Hg(II) by Br         
+   35000 PL-HG2-$                                 Prod / loss of Hg2                      
+   36000 DRYD-FLX                                 Drydep fluxes                           
+   37000 DRYD-VEL                                 Drydep velocities                       
+   38000 HCN-PL-$                                 HCN & CH3CN sinks                       
+   39000 HCN-SRCE                                 HCN & CH3CN sources                     
+   40000 CO2-SRCE                                 CO2 fluxes                              
+   41000 OCEAN-HG                                 Oceanic Hg emissions                    
+   42000 LFLASH-$                                 Lightning flash rates                   
+   43000 IJ-SOA-$                                 SOA concentrations                      
+   44000 CH3ISRCE                                 CH3I emissions                          
+   45000 BIOBSRCE                                 Biomass emissions                       
+   46000 TIME-TPS                                 Fraction of time in troposphere         
+   47000 PL-H2HD-                                 Prod / loss of H2-HD                    
+   48000 H2HD-SRC                                 H2 HD emissions                         
+   50000 GAMMA-$                                  gamma values                            
+   49000 SNOW-HG                                  Reducible Hg mass in ocean snow and ice 
+   50000 SNOW-HGN                                 Non-reducible Hg mass in ocean snow and 
+   51000 SNHG-LN                                  Reducible Hg mass in land snow and ice  
+   52000 SNHGN-LN                                 Non-reducible Hg mass in snow and ice   
+   57000 THETA-$                                  Potential temperature                   
+   50000 CH4-EMIS                                 CH4 Emissions                           
+   51000 WET-FRAC                                 Wetland Fraction                        
+   59000 SHIP-$$$                                 Ship diagnostics                        
+   60000 RST-SOIL                                 Soil NOx restart file                   
+   52000 PG-SRCE                                  POPs Emissions                          
+   53000 PG-PP-$                                  POP partitioning/oxidation              
+   54000 FJX-FLX$                                 Radiative flux from FAST-JX             
+   55000 IJ-PSC-$                                 PSC restart file                        
+   72000 RADMAP-$                                 Radiative diagnostics                   
+   85000 ISOROP-$                                 ISORROPIA pH and H+                     
+   50000 IJ-CHK-$                                 Species concentrations after chemistry  
