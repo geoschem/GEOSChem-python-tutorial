@@ -2,8 +2,6 @@
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/JiaweiZhuang/GEOSChem-python-tutorial/master)
 
-To be used for the workshop at the [GEOS-Chem Asia Meeting](http://acmg.seas.harvard.edu/geos/meetings/2018_GCA/index.html), May 21-23, 2018.
-
 * [Installation](#installation)
   * [Try it right now on the cloud for free](#try-it-right-now-on-the-cloud-for-free)
   * [Install on your own computer](#install-on-your-own-computer)
