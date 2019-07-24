@@ -234,3 +234,11 @@ So, make sure you are reading something related to **Research computing** (not j
 A great resource is [software carpentry](https://software-carpentry.org). I particularly recommend lessons on [Linux command line](http://swcarpentry.github.io/shell-novice/), [Git](http://swcarpentry.github.io/git-novice/), [Makefile](http://swcarpentry.github.io/make-novice/), and [Python](http://swcarpentry.github.io/python-novice-gapminder/). I also recommend the book (not free though) [Effective Computation in Physics](http://shop.oreilly.com/product/0636920033424.do), which can bring a researcher's software skill to the next level.
 
 Finally, this situation (hard to identify proper tutorials) is also true for cloud computing. The cloud should be relatively easy to learn if you follow the correct path (i.e. read the [documentation](http://cloud-gc.readthedocs.io/) I wrote!), instead of learning it from a web programmer's perspective.
+
+
+# Licensing
+
+This tutorial is distributed under the MIT license.  Please see the license
+documents LICENSE.txt and AUTHORS.txt, both of which are located in the
+root folder.
+
