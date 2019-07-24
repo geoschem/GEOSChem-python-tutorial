@@ -1,7 +1,8 @@
 # Python/xarray tutorial for GEOS-Chem users
 
 [![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/JiaweiZhuang/GEOSChem-python-tutorial/master)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1469690.svg)](https://doi.org/10.5281/zenodo.1469690)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1469690.svg)](https://doi.org/10.5281/zenodo.1469690) 
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/geoschem/GEOSChem-python-tutorial/blob/master/LICENSE.txt)
 
 * [Installation](#installation)
   * [Try it right now on the cloud for free](#try-it-right-now-on-the-cloud-for-free)
