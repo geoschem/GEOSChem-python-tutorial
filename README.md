@@ -29,7 +29,7 @@ Please follow [Jupyter official doc](https://jupyter-notebook.readthedocs.io/en/
 
 ## Install on your own computer
 
-Python is free & open-source so can be easily installed on any machines. To best way to get the **scientific** Python environment is using the [Conda management system](https://conda.io/docs/). Please follow the [official installation guide](https://conda.io/docs/user-guide/install/index.html) for installing on Linux/Mac/Windows. Linux/Mac also comes with a system Python (`/usr/bin/python`). Don't touch that. Windows users might find the [full Anaconda](https://docs.anaconda.com/anaconda/install/windows) (Conda plus tons of packages) with graphical interface easier to use than the command line.
+Python is free & open-source so can be easily installed on any machines. To best way to get the **scientific** Python environment is using the [Conda management system](https://conda.io/docs/). Please follow the [official installation guide](https://conda.io/projects/conda/en/latest/user-guide/install/index.html) for installing on Linux/Mac/Windows. Linux/Mac also comes with a system Python (`/usr/bin/python`). Don't touch that. Windows users might find the [full Anaconda](https://docs.anaconda.com/anaconda/install/windows) (Conda plus tons of packages) with graphical interface easier to use than the command line.
 
 After installation, check the paths:
 
