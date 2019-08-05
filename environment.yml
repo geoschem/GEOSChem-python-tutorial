@@ -18,4 +18,4 @@ dependencies:
     - esmpy         # Python interface to ESMF (xesmf dependency)
     - pip:
         # These are additional libraries to search for on PyPI
-        - xesmf    # Regridding xarray and numpy data
+        - xesmf==0.2.0    # Regridding xarray and numpy data
