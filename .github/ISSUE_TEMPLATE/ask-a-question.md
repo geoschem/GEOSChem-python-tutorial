@@ -1,8 +1,8 @@
 ---
 name: Ask a question about GEOSChem-python-tutorial
-about: Template for asking general questions about GEOSChem-python-tutorial
+about: Use this template to ask for more information about GEOSChem-python-tutorial
 title: "[QUESTION]"
-labels: ''
+labels: question
 assignees: ''
 
 ---

@@ -1,8 +1,8 @@
 ---
 name: Request a new GEOSChem-python-tutorial feature
-about: Template for users to request new features in GEOSChem-python-tutorial
+about: Use this template to request a new feature
 title: "[FEATURE REQUEST]"
-labels: ''
+labels: feature
 assignees: ''
 
 ---

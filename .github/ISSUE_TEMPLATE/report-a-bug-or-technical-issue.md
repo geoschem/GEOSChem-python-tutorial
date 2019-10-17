@@ -1,8 +1,8 @@
 ---
 name: Report a bug or technical issue
-about: This template allows users to report bugs and technical issues for GEOSChem-python-tutorial in the Github issue tracker.
+about: Use this template allows to report bugs and technical issues encountered with GEOSChem-python-tutorial.
 title: "[BUG/ISSUE]"
-labels: ''
+labels: bug
 assignees: ''
 
 ---
